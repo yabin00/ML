@@ -1,0 +1,78 @@
+﻿《机器学习与深度学习》，王衡军，清华大学出版社，书号：9787302606659，2022年6月出版
+
+
+
+
+
+本次包中的代码是完稿后第一次环境版本提高版。
+
+本次包中的代码在以下环境中经测试可运行：
+
+
+
+    Anaconda安装文件：Anaconda3-2019.10-Windows-x86_64.exe
+
+
+    python=3.8.0
+
+    scikit-learn=1.0.2
+
+
+    tensorflow=2.6.0
+
+
+    mindspore=1.7.0
+
+
+    gym=0.18.0
+    spyder=5.3.0
+    jupyper=6.4.11
+
+    
+
+
+环境安装方法参见第一章。
+
+如果仅为了学习，除了还在快速发展的MindSpore外，不建议采用高版本的环境，因为。。。实在是太费CPU和内存了。。。
+
+
+
+
+
+本次代码增改情况：
+
+1.修改ModuleNotFoundError: No module named 'keras'报错。（ch4/多层全连接层神经网络求解非线性回归问题示例.ipynb）
+
+2.增加cpu平台上SGD优化算子示例。（ch4/多层全连接层神经网络求解非线性回归问题示例.ipynb）
+
+3.增加cpu平台上SGD优化算子示例。（ch4/模拟线性回归模型的神经网络示例.ipynb）
+
+4.修改ModuleNotFoundError: No module named 'keras'报错。（ch4/模拟线性回归模型的神经网络示例.ipynb）
+5.修改ModuleNotFoundError: No module named 'keras'报错。（ch4/NN_regress.py）
+6.修改ModuleNotFoundError: No module named 'keras'报错。（ch4/NN_regress_earlystop.py）
+7.修改ModuleNotFoundError: No module named 'keras'报错。（ch4/NN_regress_overfit.py）
+8.修改ModuleNotFoundError: No module named 'keras'报错。（ch5/Conv2d算子验证.ipynb）
+9.修改ValueError: Shapes (10,) and (1, 10) are incompatible报错。（ch5/Mnist卷积神经网络示例.ipynb，2.FGSM非定向攻击：label = label.reshape(1,10)，3.FGM定向攻击：taget_label = taget_label.reshape(1,10)）
+10.修改ValueError: Shapes () and (1, 10) are incompatible报错。（ch5/Mnist卷积神经网络示例.ipynb，4.DeepFool多分类非定向攻击）
+11.修改ModuleNotFoundError: No module named 'keras'报错。（ch5/TensorFlow模拟异或运算示例.ipynb）
+12.增加MindSpore模拟异或运算。（ch5/MindSpore模拟异或运算.ipynb）
+13.修改ValueError: Shapes (1000,) and (1, 1000) are incompatible报错。（ch5/vgg19_app.ipynb）
+14.修改ModuleNotFoundError: No module named 'keras'报错。（ch6/中文分词示例.ipynb）
+15.修改ModuleNotFoundError: No module named 'keras'报错。（ch6/循环神经网络实现序列回归.ipynb）
+16.修改ModuleNotFoundError: No module named 'keras'报错。（ch6/模拟循环神经网络前向传播.ipynb）
+17.修改KeyError: 0报错。（ch7/kaggle电信用户流失分类.ipynb，多层全连接层神经网络模型-MindSpore框架下实现，X_test = np.array(X_test)）
+18.增加MindSpore框架下模拟RNN基本单元。（ch6/模拟循环神经网络前向传播.ipynb）
+19.增加MindSpore框架下中文分词示例。（ch6/中文分词示例-MindSpore实现-LSTM+CRF.ipynb）
+
+
+建议：
+1.书上有些示例代码因为完稿时MindSpore还不支持cpu平台上的SGD优化算子而改用其它优化算子（如：多层全连接层神经网络求解非线性回归问题示例.ipynb），或者没有提供对应的MindSpore版本（如：NN_regress.py）。目前MindSpore的1.7.0版已经对cpu平台有比较全面的支持了。建议读者先自行实现对应的MindSpore的SGD版本。也可作为学生的课后实践习题。
+
+
+
+
+
+！！！为了方便初学者上手，将适时发布适应新版本环境的代码，请读者持续关注附属资源包（扫书上的二维码获取）。
+
+
+如有问题电邮wanghengjun@163.com

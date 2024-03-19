@@ -1,0 +1,36 @@
+# [No.1] construct_wrapper.0 @ctx.addr=0x9777ca0
+# 
+funcgraph fg_0(
+        %para1 : Tensor(F32)[200]    # x
+        , %para2 : Ref[Tensor(F32)][1] = @null    # bias
+        , %para3 : Ref[Tensor(F32)][1, 1] = @null    # weight
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_1(%para1)    #(Tensor(F32)[200])    # fg_1=construct.1(@ctx.addr=0x9777a60) #scope: Default @ctx.addr=0x9777a60
+      # 
+    Primitive::return(%1)    #(Undefined) #scope: Default
+      # 
+}
+
+
+# [No.2] construct.1 @ctx.addr=0x9777a60
+# In file <ipython-input-4-cd1494e7c736>(14)/
+funcgraph fg_1[fg_0](
+        %para4 : Tensor(F32)[200]    # x
+    ) {
+
+#------------------------> 1
+    %1 = DoSignaturePrimitive::S-Prim-MatMul[transpose_x2=Bool(0), transpose_b=Bool(0), transpose_a=Bool(0), input_names=["x1", "x2"], output_names=["output"], io_format="ND", transpose_x1=Bool(0)](%para4, %para3)    #(Tensor(F32)[200], Ref[Tensor(F32)][1, 1]) #scope: Default/network-WithLossCell/_backbone-LinearNet
+      # In file <ipython-input-4-cd1494e7c736>(15)/
+    %2 = DoSignaturePrimitive::S-Prim-BiasAdd[output_names=["output"], data_format="NCHW", input_names=["x", "b"]](%1, %para2)    #(Undefined, Ref[Tensor(F32)][1]) #scope: Default/network-WithLossCell/_backbone-LinearNet
+      # In file <ipython-input-4-cd1494e7c736>(16)/
+    Primitive::return(%2)    #(Undefined) #scope: Default/network-WithLossCell/_backbone-LinearNet
+      # In file <ipython-input-4-cd1494e7c736>(17)/
+}
+
+
+#===============================================================================
+
+
+# num of total function graphs: 2

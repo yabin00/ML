@@ -1,0 +1,32 @@
+
+
+All Tensors:
+
+index:	size:	real_size:	offset:	addr:	type:	lifelong:	life_start:	life_end:	source node name:
+%0T	#2048S	#2000S	&0	&0	Common	0	0	1	MatMul-op165
+%1T	#2048S	#2000S	&0	&0	Common	0	1	2	BiasAdd-op166
+%2T	#2048S	#2000S	&0	&0	Common	0	2	3	Sigmoid-op167
+%3T	#2048S	#2000S	&0	&0	Common	0	3	4	MatMul-op168
+%4T	#2048S	#2000S	&0	&0	Common	0	4	5	BiasAdd-op169
+%5T	#2048S	#2000S	&0	&0	Common	0	5	6	Sigmoid-op170
+%6T	#512S	#400S	&0	&0	Common	0	6	7	MatMul-op171
+%7T	#512S	#400S	&0	&0	Common	0	7	8	BiasAdd-op172
+%8T	#512S	#400S	&0	&0	OutputOnly	0	8	8	Sigmoid-op173
+
+
+All Nodes:
+
+$0	MatMul-op165	0	inputs[%0P, %1P, ]	outputs[%0T, ]	workspace[]	streamID[@4294967295]
+$1	BiasAdd-op166	0	inputs[%0T, %2P, ]	outputs[%1T, ]	workspace[]	streamID[@4294967295]
+$2	Sigmoid-op167	0	inputs[%1T, ]	outputs[%2T, ]	workspace[]	streamID[@4294967295]
+$3	MatMul-op168	0	inputs[%2T, %3P, ]	outputs[%3T, ]	workspace[]	streamID[@4294967295]
+$4	BiasAdd-op169	0	inputs[%3T, %4P, ]	outputs[%4T, ]	workspace[]	streamID[@4294967295]
+$5	Sigmoid-op170	0	inputs[%4T, ]	outputs[%5T, ]	workspace[]	streamID[@4294967295]
+$6	MatMul-op171	0	inputs[%5T, %5P, ]	outputs[%6T, ]	workspace[]	streamID[@4294967295]
+$7	BiasAdd-op172	0	inputs[%6T, %6P, ]	outputs[%7T, ]	workspace[]	streamID[@4294967295]
+$8	Sigmoid-op173	0	inputs[%7T, ]	outputs[%8T, ]	workspace[]	streamID[@4294967295]
+
+
+All Stream Groups:
+
+

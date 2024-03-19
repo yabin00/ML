@@ -1,0 +1,34 @@
+
+
+All Tensors:
+
+index:	size:	real_size:	offset:	addr:	type:	lifelong:	life_start:	life_end:	source node name:
+%0T	#512S	#64S	&0	&0	Common	0	0	1	MatMul-op62
+%1T	#512S	#64S	&0	&0	Common	0	1	2	BiasAdd-op63
+%2T	#512S	#64S	&0	&0	Common	0	2	4	Sub-op64
+%3T	#512S	#64S	&0	&0	Common	0	3	6	Mul-op65
+%4T	#512S	#64S	&0	&0	Common	0	4	7	Square-op66
+%5T	#512S	#4S	&0	&0	Common	0	5	9	BiasAddGrad-op67
+%6T	#512S	#4S	&0	&0	Common	0	6	8	MatMul-op68
+%7T	#512S	#4S	&0	&0	OutputOnly	0	7	7	ReduceMean-op69
+%8T	#512S	#4S	&0	&0	OutputOnly	0	8	8	ApplyMomentum-op70
+%9T	#512S	#4S	&0	&0	OutputOnly	0	9	9	ApplyMomentum-op71
+
+
+All Nodes:
+
+$0	MatMul-op62	0	inputs[%0P, %1P, ]	outputs[%0T, ]	workspace[]	streamID[@4294967295]
+$1	BiasAdd-op63	0	inputs[%0T, %2P, ]	outputs[%1T, ]	workspace[]	streamID[@4294967295]
+$2	Sub-op64	0	inputs[%1T, %3P, ]	outputs[%2T, ]	workspace[]	streamID[@4294967295]
+$3	Mul-op65	0	inputs[%2T, %4P, ]	outputs[%3T, ]	workspace[]	streamID[@4294967295]
+$4	Square-op66	0	inputs[%2T, ]	outputs[%4T, ]	workspace[]	streamID[@4294967295]
+$5	BiasAddGrad-op67	0	inputs[%3T, ]	outputs[%5T, ]	workspace[]	streamID[@4294967295]
+$6	MatMul-op68	0	inputs[%0P, %3T, ]	outputs[%6T, ]	workspace[]	streamID[@4294967295]
+$7	ReduceMean-op69	0	inputs[%4T, ]	outputs[%7T, ]	workspace[]	streamID[@4294967295]
+$8	ApplyMomentum-op70	0	inputs[%1P, %5P, %6P, %6T, %7P, ]	outputs[%8T, ]	workspace[]	streamID[@4294967295]
+$9	ApplyMomentum-op71	0	inputs[%2P, %8P, %6P, %5T, %7P, ]	outputs[%9T, ]	workspace[]	streamID[@4294967295]
+
+
+All Stream Groups:
+
+

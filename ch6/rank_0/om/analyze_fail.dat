@@ -1,0 +1,406 @@
+# [No.1] construct_wrapper.3077
+# In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(372)/    def construct(self, *inputs):/
+funcgraph fg_3077(
+        %para1 : Tensor(I64)[62946, 32]    # inputs0
+        , %para2 : Tensor(I64)[62946]    # inputs1
+        , %para3 : Tensor(I64)[62946, 32, 5]    # inputs2
+        , %para4 : Ref[Tensor(F32)][3879, 32]    # embedding.embedding_table
+        , %para5 : Ref[Tensor(F32)][128, 32]    # lstm.weight_ih_l0
+        , %para6 : Ref[Tensor(F32)][128, 32]    # lstm.weight_ih_l0_reverse
+        , %para7 : Ref[Tensor(F32)][128, 64]    # lstm.weight_ih_l1
+        , %para8 : Ref[Tensor(F32)][128, 64]    # lstm.weight_ih_l1_reverse
+        , %para9 : Ref[Tensor(F32)][128, 32]    # lstm.weight_hh_l0
+        , %para10 : Ref[Tensor(F32)][128, 32]    # lstm.weight_hh_l0_reverse
+        , %para11 : Ref[Tensor(F32)][128, 32]    # lstm.weight_hh_l1
+        , %para12 : Ref[Tensor(F32)][128, 32]    # lstm.weight_hh_l1_reverse
+        , %para13 : Ref[Tensor(F32)][128]    # lstm.bias_ih_l0
+        , %para14 : Ref[Tensor(F32)][128]    # lstm.bias_ih_l0_reverse
+        , %para15 : Ref[Tensor(F32)][128]    # lstm.bias_ih_l1
+        , %para16 : Ref[Tensor(F32)][128]    # lstm.bias_ih_l1_reverse
+        , %para17 : Ref[Tensor(F32)][128]    # lstm.bias_hh_l0
+        , %para18 : Ref[Tensor(F32)][128]    # lstm.bias_hh_l0_reverse
+        , %para19 : Ref[Tensor(F32)][128]    # lstm.bias_hh_l1
+        , %para20 : Ref[Tensor(F32)][128]    # lstm.bias_hh_l1_reverse
+        , %para21 : Ref[Tensor(F32)][5, 64]    # hidden2tag.weight
+        , %para22 : Ref[Tensor(F32)][5]    # hidden2tag.bias
+        , %para23 : Ref[Tensor(F32)][1]    # beta1_power
+        , %para24 : Ref[Tensor(F32)][1]    # beta2_power
+        , %para25 : Ref[Tensor(F32)][3879, 32]    # moment1.embedding.embedding_table
+        , %para26 : Ref[Tensor(F32)][128, 32]    # moment1.lstm.weight_ih_l0
+        , %para27 : Ref[Tensor(F32)][128, 32]    # moment1.lstm.weight_ih_l0_reverse
+        , %para28 : Ref[Tensor(F32)][128, 64]    # moment1.lstm.weight_ih_l1
+        , %para29 : Ref[Tensor(F32)][128, 64]    # moment1.lstm.weight_ih_l1_reverse
+        , %para30 : Ref[Tensor(F32)][128, 32]    # moment1.lstm.weight_hh_l0
+        , %para31 : Ref[Tensor(F32)][128, 32]    # moment1.lstm.weight_hh_l0_reverse
+        , %para32 : Ref[Tensor(F32)][128, 32]    # moment1.lstm.weight_hh_l1
+        , %para33 : Ref[Tensor(F32)][128, 32]    # moment1.lstm.weight_hh_l1_reverse
+        , %para34 : Ref[Tensor(F32)][128]    # moment1.lstm.bias_ih_l0
+        , %para35 : Ref[Tensor(F32)][128]    # moment1.lstm.bias_ih_l0_reverse
+        , %para36 : Ref[Tensor(F32)][128]    # moment1.lstm.bias_ih_l1
+        , %para37 : Ref[Tensor(F32)][128]    # moment1.lstm.bias_ih_l1_reverse
+        , %para38 : Ref[Tensor(F32)][128]    # moment1.lstm.bias_hh_l0
+        , %para39 : Ref[Tensor(F32)][128]    # moment1.lstm.bias_hh_l0_reverse
+        , %para40 : Ref[Tensor(F32)][128]    # moment1.lstm.bias_hh_l1
+        , %para41 : Ref[Tensor(F32)][128]    # moment1.lstm.bias_hh_l1_reverse
+        , %para42 : Ref[Tensor(F32)][5, 64]    # moment1.hidden2tag.weight
+        , %para43 : Ref[Tensor(F32)][5]    # moment1.hidden2tag.bias
+        , %para44 : Ref[Tensor(F32)][3879, 32]    # moment2.embedding.embedding_table
+        , %para45 : Ref[Tensor(F32)][128, 32]    # moment2.lstm.weight_ih_l0
+        , %para46 : Ref[Tensor(F32)][128, 32]    # moment2.lstm.weight_ih_l0_reverse
+        , %para47 : Ref[Tensor(F32)][128, 64]    # moment2.lstm.weight_ih_l1
+        , %para48 : Ref[Tensor(F32)][128, 64]    # moment2.lstm.weight_ih_l1_reverse
+        , %para49 : Ref[Tensor(F32)][128, 32]    # moment2.lstm.weight_hh_l0
+        , %para50 : Ref[Tensor(F32)][128, 32]    # moment2.lstm.weight_hh_l0_reverse
+        , %para51 : Ref[Tensor(F32)][128, 32]    # moment2.lstm.weight_hh_l1
+        , %para52 : Ref[Tensor(F32)][128, 32]    # moment2.lstm.weight_hh_l1_reverse
+        , %para53 : Ref[Tensor(F32)][128]    # moment2.lstm.bias_ih_l0
+        , %para54 : Ref[Tensor(F32)][128]    # moment2.lstm.bias_ih_l0_reverse
+        , %para55 : Ref[Tensor(F32)][128]    # moment2.lstm.bias_ih_l1
+        , %para56 : Ref[Tensor(F32)][128]    # moment2.lstm.bias_ih_l1_reverse
+        , %para57 : Ref[Tensor(F32)][128]    # moment2.lstm.bias_hh_l0
+        , %para58 : Ref[Tensor(F32)][128]    # moment2.lstm.bias_hh_l0_reverse
+        , %para59 : Ref[Tensor(F32)][128]    # moment2.lstm.bias_hh_l1
+        , %para60 : Ref[Tensor(F32)][128]    # moment2.lstm.bias_hh_l1_reverse
+        , %para61 : Ref[Tensor(F32)][5, 64]    # moment2.hidden2tag.weight
+        , %para62 : Ref[Tensor(F32)][5]    # moment2.hidden2tag.bias
+        , %para63 : Ref[Tensor(F32)][]    # learning_rate
+        , %para64 : Ref[Tensor(I32)][1]    # global_step
+    ) {
+    %1 : Tuple[Tensor(I64)*3] = Primitive::MakeTuple{prim_type=1}(%para1, %para2, %para3)    #(Tensor(I64)[62946, 32], Tensor(I64)[62946], Tensor(I64)[62946, 32, 5]) #scope: Default
+#[CNode]3094
+
+#------------------------> 0
+    %2 = UnpackCall::unpack_call(FuncGraph::fg_3095, %1)    #(Func, Tuple[Tensor(I64)*3])    # fg_3095=construct.3095 #scope: Default
+#[CNode]3096
+    Primitive::Return{prim_type=1}(%2)    #(Undefined) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(378)/        return loss/#[CNode]3097
+}
+# order:
+#   1: construct_wrapper.3077:[CNode]3096{[0]: ValueNode<UnpackCall> unpack_call.3098, [1]: ValueNode<FuncGraph> construct.3095, [2]: [CNode]3094}
+#   2: construct_wrapper.3077:[CNode]3097{[0]: ValueNode<Primitive> Return, [1]: [CNode]3096}
+
+
+# [No.2] UnpackCall.3078
+
+funcgraph fg_3078(
+        %para65 : Func    # 3079
+        , %para66 : Tuple[Tensor(I64)*3]    # 3080
+    ) {
+    %1 : Tensor(I64)[62946, 32] = Primitive::TupleGetItem{prim_type=1}(%para66, I64(0))    #(Tuple[Tensor(I64)*3], I64) #scope: Default
+#3099
+    %2 : Tensor(I64)[62946] = Primitive::TupleGetItem{prim_type=1}(%para66, I64(1))    #(Tuple[Tensor(I64)*3], I64) #scope: Default
+#3100
+    %3 : Tensor(I64)[62946, 32, 5] = Primitive::TupleGetItem{prim_type=1}(%para66, I64(2))    #(Tuple[Tensor(I64)*3], I64) #scope: Default
+#3101
+
+#------------------------> 1
+    %4 = %para65(%1, %2, %3)    #(Tensor(I64)[62946, 32], Tensor(I64)[62946], Tensor(I64)[62946, 32, 5]) #scope: Default
+#3102
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default
+#3103
+}
+# order:
+#   1: UnpackCall.3078:3102{[0]: 3079, [1]: 3099, [2]: 3100, [3]: 3101}
+#   2: UnpackCall.3078:3103{[0]: ValueNode<Primitive> Return, [1]: 3102}
+
+
+# [No.3] construct.3081
+# In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(372)/    def construct(self, *inputs):/
+funcgraph fg_3081[fg_3077](
+        %para67 : Tensor(I64)[62946, 32]    # inputs0
+        , %para68 : Tensor(I64)[62946]    # inputs1
+        , %para69 : Tensor(I64)[62946, 32, 5]    # inputs2
+    ) {
+    %1 : Tuple[Tensor(I64)*3] = Primitive::MakeTuple{prim_type=1}(%para67, %para68, %para69)    #(Tensor(I64)[62946, 32], Tensor(I64)[62946], Tensor(I64)[62946, 32, 5]) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(372)/    def construct(self, *inputs):/#[CNode]3104
+
+#------------------------> 2
+    %2 = UnpackCall::unpack_call(FuncGraph::fg_3105, %1)    #(Func, Tuple[Tensor(I64)*3])    # fg_3105=construct.3105 #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(373)/        loss = self.network(*inputs)/#loss
+    %3 = Primitive::getattr{prim_type=1}(%2, "dtype")    #(Undefined, Undefined) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(374)/        sens = F.fill(loss.dtype, loss.shape, self.sens)/#[CNode]3106
+    %4 = Primitive::getattr{prim_type=1}(%2, "shape")    #(Undefined, Undefined) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(374)/        sens = F.fill(loss.dtype, loss.shape, self.sens)/#[CNode]3107
+    %5 = DoSignaturePrimitive::S-Prim-Fill{prim_type=1}(%3, %4, F32(1))    #(Undefined, Undefined, Undefined) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(374)/        sens = F.fill(loss.dtype, loss.shape, self.sens)/#sens
+    %6 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%5)    #(Undefined) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(375)/        grads = self.grad(self.network, self.weights)(*inputs, sens)/#[CNode]3108
+    %7 = UnpackGraphPrimitive::UnpackGraph{prim_type=1}(FuncGraph::fg_3105, %1, %6)    #(Undefined, Tuple[Tensor(I64)*3], Undefined)    # fg_3105=construct.3105 #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(375)/        grads = self.grad(self.network, self.weights)(*inputs, sens)/#grads
+    %8 = Primitive::MakeTuple{prim_type=1}(%para4, %para5, %para6, %para7, %para8, %para9, %para10, %para11, %para12, %para13, %para14, %para15, %para16, %para17, %para18, %para19, %para20, %para21, %para22)    #(Ref[Tensor(F32)][3879, 32], Ref[Tensor(F32)][128, 32], Ref[Tensor(F32)][128, 32], Ref[Tensor(F32)][128, 64], Ref[Tensor(F32)][128, 64], Ref[Tensor(F32)][128, 32], Ref[Tensor(F32)][128, 32], Ref[Tensor(F32)][128, 32], Ref[Tensor(F32)][128, 32], Ref[Tensor(F32)][128], Ref[Tensor(F32)][128], Ref[Tensor(F32)][128], Ref[Tensor(F32)][128], Ref[Tensor(F32)][128], Ref[Tensor(F32)][128], Ref[Tensor(F32)][128], Ref[Tensor(F32)][128], Ref[Tensor(F32)][5, 64], Ref[Tensor(F32)][5]) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(375)/        grads = self.grad(self.network, self.weights)(*inputs, sens)/#[CNode]3109
+    %9 = DoSignaturePrimitive::S-Prim-grad{prim_type=1}(%7, %8)    #(Undefined, Undefined) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(375)/        grads = self.grad(self.network, self.weights)(*inputs, sens)/#grads
+    %10 = UnpackCall::unpack_call(%9, %1, %6)    #(Undefined, Tuple[Tensor(I64)*3], Undefined) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(375)/        grads = self.grad(self.network, self.weights)(*inputs, sens)/#grads
+    %11 = DoSignaturePrimitive::S-Prim-identity{prim_type=1}[side_effect_propagate=I64(1)](%10)    #(Undefined) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(376)/        grads = self.grad_reducer(grads)/#grads
+    %12 = FuncGraph::fg_3110(%11)    #(Undefined)    # fg_3110=construct.3110 #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(377)/        loss = F.depend(loss, self.optimizer(grads))/#[CNode]3111
+    %13 = DoSignaturePrimitive::S-Prim-Depend{prim_type=1}[side_effect_propagate=I64(1)](%2, %12)    #(Undefined, Undefined) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(377)/        loss = F.depend(loss, self.optimizer(grads))/#loss
+    Primitive::Return{prim_type=1}(%13)    #(Undefined) #scope: Default
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\wrap\cell_wrapper.py(378)/        return loss/#[CNode]3112
+}
+# order:
+#   1: construct.3081:loss{[0]: ValueNode<UnpackCall> unpack_call.3113, [1]: ValueNode<FuncGraph> construct.3105, [2]: [CNode]3104}
+#   2: construct.3081:[CNode]3106{[0]: ValueNode<Primitive> getattr, [1]: loss, [2]: ValueNode<StringImm> dtype}
+#   3: construct.3081:[CNode]3107{[0]: ValueNode<Primitive> getattr, [1]: loss, [2]: ValueNode<StringImm> shape}
+#   4: construct.3081:sens{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Fill, [1]: [CNode]3106, [2]: [CNode]3107, [3]: ValueNode<FP32Imm> 1.000000}
+#   5: construct.3081:[CNode]3108{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: sens}
+#   6: construct.3081:grads{[0]: ValueNode<UnpackGraphPrimitive> UnpackGraph, [1]: ValueNode<FuncGraph> construct.3105, [2]: [CNode]3104, [3]: [CNode]3108}
+#   7: construct.3081:grads{[0]: ValueNode<DoSignaturePrimitive> S-Prim-grad, [1]: grads, [2]: [CNode]3109}
+#   8: construct.3081:grads{[0]: ValueNode<UnpackCall> unpack_call.3114, [1]: grads, [2]: [CNode]3104, [3]: [CNode]3108}
+#   9: construct.3081:grads{[0]: ValueNode<DoSignaturePrimitive> S-Prim-identity, [1]: grads}
+#  10: construct.3081:[CNode]3111{[0]: ValueNode<FuncGraph> construct.3110, [1]: grads}
+#  11: construct.3081:loss{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Depend, [1]: loss, [2]: [CNode]3111}
+#  12: construct.3081:[CNode]3112{[0]: ValueNode<Primitive> Return, [1]: loss}
+
+
+# [No.4] UnpackCall.3082
+
+funcgraph fg_3082(
+        %para70 : Func    # 3083
+        , %para71 : Tuple[Tensor(I64)*3]    # 3084
+    ) {
+    %1 : Tensor(I64)[62946, 32] = Primitive::TupleGetItem{prim_type=1}(%para71, I64(0))    #(Tuple[Tensor(I64)*3], I64) #scope: Default
+#3115
+    %2 : Tensor(I64)[62946] = Primitive::TupleGetItem{prim_type=1}(%para71, I64(1))    #(Tuple[Tensor(I64)*3], I64) #scope: Default
+#3116
+    %3 : Tensor(I64)[62946, 32, 5] = Primitive::TupleGetItem{prim_type=1}(%para71, I64(2))    #(Tuple[Tensor(I64)*3], I64) #scope: Default
+#3117
+
+#------------------------> 3
+    %4 = %para70(%1, %2, %3)    #(Tensor(I64)[62946, 32], Tensor(I64)[62946], Tensor(I64)[62946, 32, 5]) #scope: Default
+#3118
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default
+#3119
+}
+# order:
+#   1: UnpackCall.3082:3118{[0]: 3083, [1]: 3115, [2]: 3116, [3]: 3117}
+#   2: UnpackCall.3082:3119{[0]: ValueNode<Primitive> Return, [1]: 3118}
+
+
+# [No.5] construct.3085
+# In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(9)/
+funcgraph fg_3085[fg_3077](
+        %para72 : Tensor(I64)[62946, 32]    # inputs
+        , %para73 : Tensor(I64)[62946]    # seq_length
+        , %para74 : Tensor(I64)[62946, 32, 5]    # tags
+    ) {
+    %1 : Tensor(F32)[62946, 32, 32] = FuncGraph::fg_3120(%para72)    #(Tensor(I64)[62946, 32])    # fg_3120=construct.3120 #scope: Default/network-BiLSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(10)/#embeds
+    %2 : Tuple[Tensor(F32)] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%1)    #(Tensor(F32)[62946, 32, 32]) #scope: Default/network-BiLSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#[CNode]3121
+    %3 : Tuple[String] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("seq_length")    #(String) #scope: Default/network-BiLSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#[CNode]3122
+    %4 : Tuple[Tensor(I64)] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%para73)    #(Tensor(I64)[62946]) #scope: Default/network-BiLSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#[CNode]3123
+    %5 : Dictionary[[seq_length,],[Tensor[Int64]]] = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%3, %4)    #(Tuple[String], Tuple[Tensor(I64)]) #scope: Default/network-BiLSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#[CNode]3124
+
+#------------------------> 4
+    %6 = UnpackCall::unpack_call(FuncGraph::fg_3125, %2, %5)    #(Func, Tuple[Tensor(F32)], Dictionary[[seq_length,],[Tensor[Int64]]])    # fg_3125=construct.3125 #scope: Default/network-BiLSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#[CNode]3126
+    %7 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%6, I64(0))    #(Undefined, Undefined) #scope: Default/network-BiLSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#outputs
+    %8 = FuncGraph::fg_3127(%7)    #(Undefined)    # fg_3127=construct.3127 #scope: Default/network-BiLSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(12)/#tags
+    Primitive::Return{prim_type=1}(%8)    #(Undefined) #scope: Default/network-BiLSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(15)/#[CNode]3128
+}
+# order:
+#   1: construct.3085:embeds{[0]: ValueNode<FuncGraph> construct.3120, [1]: inputs}
+#   2: construct.3085:[CNode]3121{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: embeds}
+#   3: construct.3085:[CNode]3122{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> seq_length}
+#   4: construct.3085:[CNode]3123{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: seq_length}
+#   5: construct.3085:[CNode]3124{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]3122, [2]: [CNode]3123}
+#   6: construct.3085:[CNode]3126{[0]: ValueNode<UnpackCall> unpack_call.3129, [1]: ValueNode<FuncGraph> construct.3125, [2]: [CNode]3121, [3]: [CNode]3124}
+#   7: construct.3085:outputs{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]3126, [2]: ValueNode<Int64Imm> 0}
+#   8: construct.3085:tags{[0]: ValueNode<FuncGraph> construct.3127, [1]: outputs}
+#   9: construct.3085:[CNode]3128{[0]: ValueNode<Primitive> Return, [1]: tags}
+
+
+# [No.6] UnpackCall.3086
+
+funcgraph fg_3086(
+        %para75 : Func    # 3087
+        , %para76 : Tuple[Tensor(F32)]    # 3088
+        , %para77 : Dictionary[[seq_length,],[Tensor[Int64]]]    # 3089
+    ) {
+    %1 : Tensor(F32)[62946, 32, 32] = Primitive::TupleGetItem{prim_type=1}(%para76, I64(0))    #(Tuple[Tensor(F32)], I64) #scope: Default/network-BiLSTM
+#3130
+    %2 : Tensor(I64)[62946] = Primitive::dict_getitem{prim_type=1}(%para77, "seq_length")    #(Dictionary[[seq_length,],[Tensor[Int64]]], String) #scope: Default/network-BiLSTM
+#3131
+    %3 : Keyword[key : seq_lengthvalue : Tensor[Int64]] = Primitive::make_keyword_arg{prim_type=1}("seq_length", %2)    #(String, Tensor(I64)[62946]) #scope: Default/network-BiLSTM
+#3132
+
+#------------------------> 5
+    %4 = %para75(%1, %3)    #(Tensor(F32)[62946, 32, 32], Keyword[key : seq_lengthvalue : Tensor[Int64]]) #scope: Default/network-BiLSTM
+#3133
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default/network-BiLSTM
+#3134
+}
+# order:
+#   1: UnpackCall.3086:3133{[0]: 3087, [1]: 3130, [2]: 3132}
+#   2: UnpackCall.3086:3134{[0]: ValueNode<Primitive> Return, [1]: 3133}
+
+
+# [No.7] construct.3090
+# In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(537)/    def construct(self, x, hx=None, seq_length=None):/
+funcgraph fg_3090[fg_3077](
+        %para78 : Tensor(F32)[62946, 32, 32]    # Φx
+        , %para79 : Keyword[key : seq_lengthvalue : Tensor[Int64]]    # Φseq_length
+    ) {
+    %1 : NoneType = DoSignaturePrimitive::S-Prim-_check_is_tensor{prim_type=1}("x", %para78, "LSTM")    #(String, Tensor(F32)[62946, 32, 32], String) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(541)/        _check_is_tensor("x", x, self.cls_name)/#[CNode]3135
+    %2 : NoneType = Primitive::stop_gradient{prim_type=1}(%1)    #(NoneType) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#[CNode]3136
+    %3 : Bool = DoSignaturePrimitive::S-Prim-is_not{prim_type=1}(None, None)    #(NoneType, NoneType) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(543)/        if hx is not None:/#[CNode]3137
+    %4 : Bool = FuncGraph::fg_3138(%3)    #(Bool)    # fg_3138=bool_.3138 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(543)/        if hx is not None:/#[CNode]3139
+    %5 : Func = Primitive::Switch{prim_type=1}(%4, FuncGraph::fg_3140, FuncGraph::fg_3091)    #(Bool, Func, Func)    # fg_3140=✓construct.3140, fg_3091=✗construct.3091 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(543)/        if hx is not None:/#[CNode]3141
+
+#------------------------> 6
+    %6 = %5() #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(543)/        if hx is not None:/#[CNode]3142
+    %7 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%6, %2)    #(Undefined, NoneType) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#[CNode]3143
+    Primitive::Return{prim_type=1}(%7)    #(Undefined) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(543)/        if hx is not None:/#[CNode]3144
+}
+# order:
+#   1: construct.3090:[CNode]3145{[0]: ValueNode<FuncGraph> bool_.3138, [1]: ValueNode<BoolImm> false}
+#   2: construct.3090:[CNode]3146{[0]: ValueNode<Primitive> Switch, [1]: [CNode]3145, [2]: ValueNode<FuncGraph> ↰construct.3147, [3]: ValueNode<FuncGraph> ↱construct.3148}
+#   3: construct.3090:Φmax_batch_size{[0]: [CNode]3146}
+#   4: construct.3090:[CNode]3149{[0]: ValueNode<FuncGraph> bool_.3138, [1]: ValueNode<BoolImm> true}
+#   5: construct.3090:[CNode]3150{[0]: ValueNode<Primitive> Switch, [1]: [CNode]3149, [2]: ValueNode<FuncGraph> ↰construct.3151, [3]: ValueNode<FuncGraph> ↱construct.3152}
+#   6: construct.3090:num_directions{[0]: [CNode]3150}
+#   7: construct.3090:[CNode]3135{[0]: ValueNode<DoSignaturePrimitive> S-Prim-_check_is_tensor, [1]: ValueNode<StringImm> x, [2]: Φx, [3]: ValueNode<StringImm> LSTM}
+#   8: construct.3090:Φx_dtype{[0]: ValueNode<Primitive> getattr, [1]: Φx, [2]: ValueNode<StringImm> dtype}
+#   9: construct.3090:[CNode]3137{[0]: ValueNode<DoSignaturePrimitive> S-Prim-is_not, [1]: ValueNode<None> None, [2]: ValueNode<None> None}
+#  10: construct.3090:[CNode]3139{[0]: ValueNode<FuncGraph> bool_.3138, [1]: [CNode]3137}
+#  11: construct.3090:[CNode]3141{[0]: ValueNode<Primitive> Switch, [1]: [CNode]3139, [2]: ValueNode<FuncGraph> ✓construct.3140, [3]: ValueNode<FuncGraph> ✗construct.3091}
+#  12: construct.3090:[CNode]3142{[0]: [CNode]3141}
+#  13: construct.3090:[CNode]3144{[0]: ValueNode<Primitive> Return, [1]: [CNode]3143}
+
+
+# [No.8] ✗construct.3091
+# In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(543)/        if hx is not None:/
+funcgraph fg_3091[fg_3090](
+) {
+    %1 : $(construct.3090):Bool = FuncGraph::fg_3138(Bool(1))    #(Bool)    # fg_3138=bool_.3138 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(540)/        num_directions = 2 if self.bidirectional else 1/#[CNode]3149
+    %2 : $(construct.3090):Func = Primitive::Switch{prim_type=1}(%1, FuncGraph::fg_3151, FuncGraph::fg_3152)    #(Bool, Func, Func)    # fg_3151=↰construct.3151, fg_3152=↱construct.3152 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(540)/        num_directions = 2 if self.bidirectional else 1/#[CNode]3150
+    %3 : $(construct.3090):I64 = %2() #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(540)/        num_directions = 2 if self.bidirectional else 1/#num_directions
+    %4 : I64 = DoSignaturePrimitive::S-Prim-mul{prim_type=1}(I64(2), %3)    #(I64, I64) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(556)/            hx = _init_state((self.num_layers * num_directions, max_batch_size, self.hidden_size), \/#[CNode]3153
+    %5 : $(construct.3090):Bool = FuncGraph::fg_3138(Bool(0))    #(Bool)    # fg_3138=bool_.3138 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(539)/        max_batch_size = x.shape[0] if self.batch_first else x.shape[1]/#[CNode]3145
+    %6 : $(construct.3090):Func = Primitive::Switch{prim_type=1}(%5, FuncGraph::fg_3147, FuncGraph::fg_3148)    #(Bool, Func, Func)    # fg_3147=↰construct.3147, fg_3148=↱construct.3148 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(539)/        max_batch_size = x.shape[0] if self.batch_first else x.shape[1]/#[CNode]3146
+    %7 : $(construct.3090):I64 = %6() #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(560)/            _check_seq_length_size(max_batch_size, seq_length.shape[0], self.cls_name)/#Φmax_batch_size
+    %8 : Tuple[I64*3] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%4, %7, I64(32))    #(I64, I64, I64) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(556)/            hx = _init_state((self.num_layers * num_directions, max_batch_size, self.hidden_size), \/#[CNode]3154
+    %9 : $(construct.3090):TypeType = Primitive::getattr{prim_type=1}(%para78, "dtype")    #(Tensor(F32)[62946, 32, 32], String) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(570)/            return x_n.astype(x_dtype), hx_n.astype(x_dtype)/#Φx_dtype
+    %10 : Tuple[Tensor(F32)*2] = DoSignaturePrimitive::S-Prim-_init_state{prim_type=1}(%8, %9, Bool(1))    #(Tuple[I64*3], TypeType, Bool) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(556)/            hx = _init_state((self.num_layers * num_directions, max_batch_size, self.hidden_size), \/#hx
+
+#------------------------> 7
+    %11 = FuncGraph::fg_3092(%10)    #(Tuple[Tensor(F32)*2])    # fg_3092=↓construct.3092 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(543)/        if hx is not None:/#[CNode]3155
+    Primitive::Return{prim_type=1}(%11)    #(Undefined) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(543)/        if hx is not None:/#[CNode]3156
+}
+# order:
+#   1: ✗construct.3091:[CNode]3153{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: ValueNode<Int64Imm> 2, [2]: num_directions}
+#   2: ✗construct.3091:[CNode]3154{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]3153, [2]: Φmax_batch_size, [3]: ValueNode<Int64Imm> 32}
+#   3: ✗construct.3091:hx{[0]: ValueNode<DoSignaturePrimitive> S-Prim-_init_state, [1]: [CNode]3154, [2]: Φx_dtype, [3]: ValueNode<BoolImm> true}
+#   4: ✗construct.3091:[CNode]3155{[0]: ValueNode<FuncGraph> ↓construct.3092, [1]: hx}
+#   5: ✗construct.3091:[CNode]3156{[0]: ValueNode<Primitive> Return, [1]: [CNode]3155}
+
+
+# [No.9] ↓construct.3092
+# In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(543)/        if hx is not None:/
+funcgraph fg_3092[fg_3090](
+        %para80 : Tuple[Tensor(F32)*2]    # Φhx
+    ) {
+    %1 : $(construct.3090):Tensor(I64)[62946] = Primitive::extract_keyword_arg{prim_type=1}("seq_length", %para79)    #(String, Keyword[key : seq_lengthvalue : Tensor[Int64]]) #scope: Default
+#[CNode]3157
+    %2 : Bool = DoSignaturePrimitive::S-Prim-is_not{prim_type=1}(%1, None)    #(Tensor(I64)[62946], NoneType) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(558)/        if seq_length is not None:/#[CNode]3158
+    %3 : Bool = FuncGraph::fg_3138(%2)    #(Bool)    # fg_3138=bool_.3138 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(558)/        if seq_length is not None:/#[CNode]3159
+    %4 : Func = Primitive::Switch{prim_type=1}(%3, FuncGraph::fg_3093, FuncGraph::fg_3160)    #(Bool, Func, Func)    # fg_3093=✓↓construct.3093, fg_3160=✗↓construct.3160 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(558)/        if seq_length is not None:/#[CNode]3161
+
+#------------------------> 8
+    %5 = %4() #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(558)/        if seq_length is not None:/#[CNode]3162
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(558)/        if seq_length is not None:/#[CNode]3163
+}
+# order:
+#   1: ↓construct.3092:[CNode]3158{[0]: ValueNode<DoSignaturePrimitive> S-Prim-is_not, [1]: [CNode]3157, [2]: ValueNode<None> None}
+#   2: ↓construct.3092:[CNode]3159{[0]: ValueNode<FuncGraph> bool_.3138, [1]: [CNode]3158}
+#   3: ↓construct.3092:[CNode]3161{[0]: ValueNode<Primitive> Switch, [1]: [CNode]3159, [2]: ValueNode<FuncGraph> ✓↓construct.3093, [3]: ValueNode<FuncGraph> ✗↓construct.3160}
+#   4: ↓construct.3092:[CNode]3162{[0]: [CNode]3161}
+#   5: ↓construct.3092:[CNode]3163{[0]: ValueNode<Primitive> Return, [1]: [CNode]3162}
+
+
+# [No.10] ✓↓construct.3093
+# In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(558)/        if seq_length is not None:/
+funcgraph fg_3093[fg_3092](
+) {
+    %1 : $(construct.3090):Tensor(I64)[62946] = Primitive::extract_keyword_arg{prim_type=1}("seq_length", %para79)    #(String, Keyword[key : seq_lengthvalue : Tensor[Int64]]) #scope: Default
+#[CNode]3157
+    %2 : TypeType = Primitive::getattr{prim_type=1}(%1, "dtype")    #(Tensor(I64)[62946], String) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(559)/            _check_input_dtype(seq_length.dtype, "seq_length", [mstype.int32, mstype.int64], self.cls_name)/#[CNode]3164
+    %3 : List[TypeType*2] = DoSignaturePrimitive::S-Prim-make_list{prim_type=1}(I32, I64)    #(TypeType, TypeType) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(559)/            _check_input_dtype(seq_length.dtype, "seq_length", [mstype.int32, mstype.int64], self.cls_name)/#[CNode]3165
+    %4 : NoneType = DoSignaturePrimitive::S-Prim-_check_input_dtype{prim_type=1}(%2, "seq_length", %3, "LSTM")    #(TypeType, String, List[TypeType*2], String) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(559)/            _check_input_dtype(seq_length.dtype, "seq_length", [mstype.int32, mstype.int64], self.cls_name)/#[CNode]3166
+    %5 : $(construct.3090):Bool = FuncGraph::fg_3138(Bool(0))    #(Bool)    # fg_3138=bool_.3138 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(539)/        max_batch_size = x.shape[0] if self.batch_first else x.shape[1]/#[CNode]3145
+    %6 : $(construct.3090):Func = Primitive::Switch{prim_type=1}(%5, FuncGraph::fg_3147, FuncGraph::fg_3148)    #(Bool, Func, Func)    # fg_3147=↰construct.3147, fg_3148=↱construct.3148 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(539)/        max_batch_size = x.shape[0] if self.batch_first else x.shape[1]/#[CNode]3146
+    %7 : $(construct.3090):I64 = %6() #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(560)/            _check_seq_length_size(max_batch_size, seq_length.shape[0], self.cls_name)/#Φmax_batch_size
+    %8 : Tuple[I64] = Primitive::getattr{prim_type=1}(%1, "shape")    #(Tensor(I64)[62946], String) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(560)/            _check_seq_length_size(max_batch_size, seq_length.shape[0], self.cls_name)/#[CNode]3167
+    %9 : I64 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%8, I64(0))    #(Tuple[I64], I64) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(560)/            _check_seq_length_size(max_batch_size, seq_length.shape[0], self.cls_name)/#[CNode]3168
+
+#------------------------> 9
+    %10 = DoSignaturePrimitive::S-Prim-_check_seq_length_size{prim_type=1}(%7, %9, "LSTM")    #(I64, I64, String) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(560)/            _check_seq_length_size(max_batch_size, seq_length.shape[0], self.cls_name)/#[CNode]3169
+    %11 = Primitive::MakeTuple{prim_type=1}(%4, %10)    #(NoneType, Undefined) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#[CNode]3170
+    %12 = Primitive::stop_gradient{prim_type=1}(%11)    #(Undefined) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#[CNode]3171
+    %13 = FuncGraph::fg_3172()    # fg_3172=↓↓construct.3172 #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(558)/        if seq_length is not None:/#[CNode]3173
+    %14 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%13, %12)    #(Undefined, Undefined) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file C:\Users\T430\AppData\Local\Temp\ipykernel_14028\967407809.py(11)/#[CNode]3174
+    Primitive::Return{prim_type=1}(%14)    #(Undefined) #scope: Default/network-BiLSTM/lstm-LSTM
+      # In file e:\Anaconda3\envs\py38tf26ms17\lib\site-packages\mindspore\nn\layer\rnns.py(558)/        if seq_length is not None:/#[CNode]3175
+}
+# order:
+#   1: ✓↓construct.3093:[CNode]3164{[0]: ValueNode<Primitive> getattr, [1]: [CNode]3157, [2]: ValueNode<StringImm> dtype}
+#   2: ✓↓construct.3093:[CNode]3165{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_list, [1]: ValueNode<Int> Int32, [2]: ValueNode<Int> Int64}
+#   3: ✓↓construct.3093:[CNode]3166{[0]: ValueNode<DoSignaturePrimitive> S-Prim-_check_input_dtype, [1]: [CNode]3164, [2]: ValueNode<StringImm> seq_length, [3]: [CNode]3165, [4]: ValueNode<StringImm> LSTM}
+#   4: ✓↓construct.3093:[CNode]3167{[0]: ValueNode<Primitive> getattr, [1]: [CNode]3157, [2]: ValueNode<StringImm> shape}
+#   5: ✓↓construct.3093:[CNode]3168{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]3167, [2]: ValueNode<Int64Imm> 0}
+#   6: ✓↓construct.3093:[CNode]3169{[0]: ValueNode<DoSignaturePrimitive> S-Prim-_check_seq_length_size, [1]: Φmax_batch_size, [2]: [CNode]3168, [3]: ValueNode<StringImm> LSTM}
+#   7: ✓↓construct.3093:[CNode]3173{[0]: ValueNode<FuncGraph> ↓↓construct.3172}
+#   8: ✓↓construct.3093:[CNode]3175{[0]: ValueNode<Primitive> Return, [1]: [CNode]3174}
+
+
+#===============================================================================
+# num of function graphs in stack: 10/11 (Ignored 1 internal frames).
